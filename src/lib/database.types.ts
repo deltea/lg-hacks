@@ -13,6 +13,7 @@ export type Database = {
         Row: {
           class: number
           created_at: string
+          finished: boolean
           grade: number | null
           id: number
           name: string
@@ -20,6 +21,7 @@ export type Database = {
         Insert: {
           class: number
           created_at?: string
+          finished?: boolean
           grade?: number | null
           id?: number
           name?: string
@@ -27,6 +29,7 @@ export type Database = {
         Update: {
           class?: number
           created_at?: string
+          finished?: boolean
           grade?: number | null
           id?: number
           name?: string

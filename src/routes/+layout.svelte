@@ -2,8 +2,6 @@
   import "../app.css";
   import "iconify-icon";
 
-  import Nav from "$lib/components/Nav.svelte";
-
 	let { children } = $props();
 </script>
 
