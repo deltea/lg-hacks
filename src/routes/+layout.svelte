@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>Bread</title>
+  <title>loaf</title>
 </svelte:head>
 
 <div class="h-screen">

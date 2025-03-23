@@ -2,9 +2,20 @@
 @import "tailwindcss";
 
 @theme {
-  --default-font-family: "Inter", sans-serif;
+  /* --default-font-family: "Inter", sans-serif; */
+  --default-font-family: monospace;
+  --border-3: 3px;
 }
 
 body {
-  @apply bg-stone-900 text-stone-100;
+  @apply bg-stone-900 text-stone-100 text-lg;
+}
+
+.dotted-background {
+  background-image: radial-gradient(#292524 2px, transparent 0);
+  background-size: 30px 30px;
+}
+
+::-webkit-scrollbar {
+  @apply hidden;
 }
