@@ -9,30 +9,33 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      cards: {
+      classes: {
         Row: {
-          content: Json | null
+          color: string | null
           created_at: string
+          grade: number
           id: number
-          type: string
-          x: number
-          y: number
+          name: string
+          notes: string
+          slug: string
         }
         Insert: {
-          content?: Json | null
+          color?: string | null
           created_at?: string
+          grade?: number
           id?: number
-          type?: string
-          x?: number
-          y?: number
+          name?: string
+          notes?: string
+          slug?: string
         }
         Update: {
-          content?: Json | null
+          color?: string | null
           created_at?: string
+          grade?: number
           id?: number
-          type?: string
-          x?: number
-          y?: number
+          name?: string
+          notes?: string
+          slug?: string
         }
         Relationships: []
       }
