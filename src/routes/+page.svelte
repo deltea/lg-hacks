@@ -3,5 +3,5 @@
 </script>
 
 <main class="h-full">
-  <h1 class="text-4xl font-bold">Bread</h1>
+  <h1 class="text-4xl font-bold">Loaf</h1>
 </main>
