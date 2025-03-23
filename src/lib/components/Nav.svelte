@@ -19,11 +19,11 @@
       <span>loaf</span>
     </a>
     <iconify-icon icon="line-md:chevron-small-right" class="text-2xl"></iconify-icon>
-    <a href="/home" class="hover:underline">home</a>
+    <a href="/" class="hover:underline">home</a>
 
     {#if currentClass}
       <iconify-icon icon="line-md:chevron-small-right" class="text-2xl"></iconify-icon>
-      <a href="/home" class="hover:underline">{currentClass.name}</a>
+      <a href="/classes/{currentClass.slug}" class="hover:underline">{currentClass.slug}</a>
     {/if}
   </span>
 

@@ -1,7 +1,10 @@
 <script lang="ts">
   import type { Tables } from "$lib/database.types";
 
-  let { currentClass }: { currentClass: Tables<"classes"> } = $props();
+  let { currentClass, assignments }: {
+    currentClass: Tables<"classes">,
+    assignments: Tables<"assignments">[],
+  } = $props();
 
   const todos = [
     { id: 1, text: "Learn Svelte" },
@@ -15,7 +18,18 @@
     <h2 class="text-stone-600 font-bold mb-4 group-hover:text-amber-600 duration-200">assignments</h2>
 
     <ul class="flex flex-col gap-2 w-full">
-      {#each todos as todo}
+      {#each assignments as assignment}
+        <li class="flex items-center gap-4 w-full hover:bg-stone-700 px-3 py-2 rounded-md group/todo duration-200 hover:cursor-pointer">
+          <input type="checkbox" id={assignment.id.toString()} />
+          <label for={assignment.id.toString()} class="hover:cursor-pointer">
+            <span>{assignment.name}</span>
+            {#if assignment.grade}
+              <span class="text-stone-600 group-hover/todo:text-amber-600 duration-200">- {assignment.grade}% of grade</span>
+            {/if}
+          </label>
+        </li>
+      {/each}
+      <!-- {#each todos as todo}
         <li class="flex items-center gap-4 w-full hover:bg-stone-700 px-3 py-2 rounded-md group/todo duration-200 hover:cursor-pointer">
           <input type="checkbox" id={todo.id.toString()} />
           <label for={todo.id.toString()} class="hover:cursor-pointer">
@@ -23,7 +37,7 @@
             <span class="text-stone-600 group-hover/todo:text-amber-600 duration-200">- 80% of grade</span>
           </label>
         </li>
-      {/each}
+      {/each} -->
     </ul>
   </div>
 

@@ -8,7 +8,7 @@
 }
 
 body {
-  @apply bg-stone-900 text-stone-100 text-lg;
+  @apply bg-stone-900 text-stone-100;
 }
 
 .dotted-background {
@@ -18,4 +18,8 @@ body {
 
 ::-webkit-scrollbar {
   @apply hidden;
+}
+
+* {
+  @apply decoration-2;
 }

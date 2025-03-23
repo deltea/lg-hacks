@@ -9,6 +9,38 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      assignments: {
+        Row: {
+          class: number
+          created_at: string
+          grade: number | null
+          id: number
+          name: string
+        }
+        Insert: {
+          class: number
+          created_at?: string
+          grade?: number | null
+          id?: number
+          name?: string
+        }
+        Update: {
+          class?: number
+          created_at?: string
+          grade?: number | null
+          id?: number
+          name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assignments_class_fkey"
+            columns: ["class"]
+            isOneToOne: false
+            referencedRelation: "classes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       classes: {
         Row: {
           color: string | null
@@ -17,6 +49,7 @@ export type Database = {
           id: number
           name: string
           notes: string
+          period: number | null
           slug: string
         }
         Insert: {
@@ -26,6 +59,7 @@ export type Database = {
           id?: number
           name?: string
           notes?: string
+          period?: number | null
           slug?: string
         }
         Update: {
@@ -35,6 +69,7 @@ export type Database = {
           id?: number
           name?: string
           notes?: string
+          period?: number | null
           slug?: string
         }
         Relationships: []

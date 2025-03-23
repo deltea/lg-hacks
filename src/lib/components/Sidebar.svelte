@@ -9,9 +9,10 @@
 
   <div class="flex flex-col gap-4 p-6 grow">
     {#each classes as c}
-      <a href="/classes/{c.slug}" class="flex items-center gap-2 hover:underline">
+      <a href="/classes/{c.slug}" class="flex items-center gap-2 group">
         <iconify-icon icon="mingcute:play-circle-fill" class="text-xl"></iconify-icon>
-        <span>{c.name}</span>
+        <span class="group-hover:underline">{c.name}</span>
+        <span class="text-stone-600">{c.period}</span>
       </a>
     {/each}
   </div>

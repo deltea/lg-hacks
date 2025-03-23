@@ -8,12 +8,13 @@
   let { data }: PageProps = $props();
   let name = $state("");
   let grade = $state(100);
+  let period = $state(1);
   let notes = $state("");
 
   async function addClass() {
     const slug = name.toLowerCase().replace(/\s/g, "-");
     await supabase.from("classes").insert([{
-      name, grade, notes, slug,
+      name, grade, notes, slug, period
     }]);
 
     goto(`/classes/${slug}`);
@@ -36,10 +37,13 @@
         <label for="grade" class="text-stone-600">current grade</label>
         <input type="number" id="grade" name="grade" class="w-full grow outline-none bg-stone-700 p-2 rounded-md mb-4" min="0" bind:value={grade} />
 
+        <label for="period" class="text-stone-600">period</label>
+        <input type="number" id="period" name="period" class="w-full grow outline-none bg-stone-700 p-2 rounded-md mb-4" min="0" bind:value={period} />
+
         <label for="notes" class="text-stone-600">notes</label>
         <textarea name="notes" id="notes" class="resize-none w-full grow outline-none bg-stone-700 p-2 rounded-md mb-4" placeholder="put your notes here..." bind:value={notes}></textarea>
 
-        <button type="submit" class="bg-amber-600 font-bold p-2 rounded-md hover:cursor-pointer duration-200">add class</button>
+        <button type="submit" class="bg-amber-600 font-bold px-4 py-2 rounded-md hover:cursor-pointer duration-200">add class</button>
       </form>
     </div>
   </div>

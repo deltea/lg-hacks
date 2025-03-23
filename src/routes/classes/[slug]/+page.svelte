@@ -12,5 +12,8 @@
 <div class="flex grow gap-4">
   <Sidebar classes={data.classes} />
 
-  <Dashboard currentClass={data.currentClass} />
+  <Dashboard
+    currentClass={data.currentClass}
+    assignments={data.assignments}
+  />
 </div>
