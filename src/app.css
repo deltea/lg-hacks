@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  
+}
+
+body {
+  @apply bg-stone-900 text-stone-100;
+}
