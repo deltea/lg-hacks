@@ -5,6 +5,7 @@
   /* --default-font-family: "Inter", sans-serif; */
   --default-font-family: monospace;
   --border-3: 3px;
+  --color-accent: #f9a8d4;
 }
 
 body {

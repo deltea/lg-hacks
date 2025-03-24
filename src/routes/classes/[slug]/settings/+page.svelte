@@ -11,12 +11,14 @@
   let name = $state(data.currentClass.name);
   let grade = $state(data.currentClass.grade);
   let period = $state(data.currentClass.period);
+  let color = $state(data.currentClass.color);
 
   async function updateClass() {
     await supabase.from("classes").update({
       name,
       grade,
       period,
+      color
     }).eq("id", data.currentClass.id);
 
     goto(`/classes/${data.currentClass.slug}`);
@@ -41,6 +43,9 @@
 
         <label for="period" class="text-stone-600">period</label>
         <input type="number" id="period" name="period" class="w-full grow outline-none bg-stone-700 p-2 rounded-md mb-4" min="0" value={data.currentClass.period} />
+
+        <label for="color" class="text-stone-600">color</label>
+        <input type="color" id="color" name="color" class="w-full grow outline-none bg-stone-700 p-1 h-14 rounded-md mb-4" value={data.currentClass.color} />
 
         <button type="submit" class="bg-amber-600 font-bold px-4 py-2 rounded-md hover:cursor-pointer duration-200">update class</button>
       </form>
