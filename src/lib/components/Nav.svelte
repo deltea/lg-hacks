@@ -28,7 +28,7 @@
   </span>
 
   <div class="flex items-center gap-4 grow justify-end">
-    <a href="/settings" class="flex justify-center items-center" aria-label="Settings">
+    <a href="/classes/{currentClass?.slug}/settings" class="flex justify-center items-center" aria-label="Settings">
       <iconify-icon icon="mingcute:settings-3-fill" class="text-2xl"></iconify-icon>
     </a>
   </div>

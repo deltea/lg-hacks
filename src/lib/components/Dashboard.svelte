@@ -9,7 +9,7 @@
     currentClass: Tables<"classes">,
     assignments: Tables<"assignments">[],
   } = $props();
-  let assignments = $state(loadedAssignments);
+  let assignments: Tables<"assignments">[] = $derived(loadedAssignments);
 
   async function addAssignment() {
     assignments = [
